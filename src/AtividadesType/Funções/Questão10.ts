@@ -9,14 +9,14 @@
 // [classificacao]&quot;.
 //  Uso: Peça o nome, peso e altura, processe os dados e exiba o laudo.
 
+export function exercicioFun10():void{
 
-let imc = 0
+let nome:string=String(prompt("Informe o nome"))
 let peso:number=Number(prompt("Informe o seu peso:"))
 let altura:number=Number(prompt("Informe a altura: "))
 
 function calcular_imc(peso:number,altura:number):number{
-     imc=peso/(altura*altura)
-    return imc   
+    return peso/(altura*altura)
 }
 
 function classificar_imc(valor_imc:number):string{
@@ -30,9 +30,12 @@ function classificar_imc(valor_imc:number):string{
     else{
         return"Sobrepeso"
     }
-
-function exibir_laudo(nome:string, classificacao:string):string{
-    let pacienteNome:string=String(prompt("Informe o nome do paciente:"))
+}
+function exibir_laudo(nome:string, classificacao:string):void{
+    console.log("Paciente: "+nome+" classificação: "+classificacao)
 
 }
+ let imc=calcular_imc(peso,altura)
+ let classificacao=classificar_imc(imc)
+ exibir_laudo(nome,classificacao)
 }

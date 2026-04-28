@@ -15,6 +15,9 @@
 // k) Novembro (11): Primavera
 // l) Dezembro (12): Primavera
 
+
+export function exercicio2Cond():void{
+
 let numero = prompt("Informe um número para escolher a estação: ")
 let estacao:number=Number(numero)
 
@@ -55,3 +58,4 @@ else if(estacao==12){
     alert("A estação do ano correspondente ao mês Setembro (12) é Primavera")
 }
 
+}

@@ -1,6 +1,9 @@
 import { exercicio3Cond } from "./AtividadesType/Condicional/Questão3.js";
 document.getElementById("btn1")?.addEventListener("click",exercicio3Cond)
 
+import { exercicio2Cond } from "./AtividadesType/Condicional/Questão3.js";
+document.getElementById("btn11")?.addEventListener("click",exercicio2Cond)
+
 import { exercicio1Rep } from "./AtividadesType/Repetição/Questão1.js";
 document.getElementById("btn2")?.addEventListener("click",exercicio1Rep)
 
@@ -24,3 +27,6 @@ document.getElementById("btn82")?.addEventListener("click",exercicioFun1)
 
 import { exercicioFun2 } from "./AtividadesType/Funções/Questão2.js";
 document.getElementById("btn8")?.addEventListener("click",exercicioFun2)
+
+import { exercicioFun10 } from "./AtividadesType/Funções/Questão10.js";
+document.getElementById("btn10")?.addEventListener("click",exercicioFun10)

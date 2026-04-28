@@ -2,6 +2,7 @@
 //  Par ou Ímpar
 //  Positivo ou Negativo
 
+export function exercicio1Cond():void{
 
 let num = prompt("Informe um valor: ")
 let digito:number=Number(num)
@@ -19,3 +20,4 @@ if(digito > 0){
     else{
         console.log("Número negativo!")
     }
+}
