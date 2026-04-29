@@ -1,7 +1,10 @@
 import { exercicio3Cond } from "./AtividadesType/Condicional/Questão3.js";
 document.getElementById("btn1")?.addEventListener("click",exercicio3Cond)
 
-import { exercicio2Cond } from "./AtividadesType/Condicional/Questão3.js";
+import { exercicio1Cond } from "./AtividadesType/Condicional/Questão1.js";
+document.getElementById("btn12")?.addEventListener("click",exercicio1Cond)
+
+import { exercicio2Cond } from "./AtividadesType/Condicional/Questão2.js";
 document.getElementById("btn11")?.addEventListener("click",exercicio2Cond)
 
 import { exercicio1Rep } from "./AtividadesType/Repetição/Questão1.js";
