@@ -4,6 +4,7 @@
 // ● ‘Segundo maior’, caso o segundo seja maior que o primeiro.
 
 //npx tsc
+export function exercicio4Cond():void{
 
 let numero1 = prompt("Informe o primeiro número: ")
 let numero2 = prompt("Informe o segundo número: ")
@@ -19,4 +20,5 @@ else if(a>b){
 }
 else if(a<b){
     console.log("Segundo é maior!")
+}
 }

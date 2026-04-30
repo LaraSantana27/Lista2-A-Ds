@@ -4,6 +4,9 @@ document.getElementById("btn1")?.addEventListener("click",exercicio3Cond)
 import { exercicio1Cond } from "./AtividadesType/Condicional/Questão1.js";
 document.getElementById("btn12")?.addEventListener("click",exercicio1Cond)
 
+import { exercicio4Cond } from "./AtividadesType/Condicional/Questão4.js";
+document.getElementById("btn13")?.addEventListener("click",exercicio4Cond)
+
 import { exercicio2Cond } from "./AtividadesType/Condicional/Questão2.js";
 document.getElementById("btn11")?.addEventListener("click",exercicio2Cond)
 
