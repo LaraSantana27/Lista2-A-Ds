@@ -22,6 +22,9 @@ document.getElementById("btn4")?.addEventListener("click",exercicio4Rep)
 import { exercicioList1 } from "./AtividadesType/Arrays/Questão1.js";
 document.getElementById("btn5")?.addEventListener("click",exercicioList1)
 
+import { exercicioList7 } from "./AtividadesType/Arrays/Questão7.js";
+document.getElementById("btn77")?.addEventListener("click",exercicioList7)
+
 import { exercício3Rep } from "./AtividadesType/Repetição/Questão3.js";
 document.getElementById("btn6")?.addEventListener("click",exercício3Rep)
 
