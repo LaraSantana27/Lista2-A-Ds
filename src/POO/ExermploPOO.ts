@@ -16,7 +16,10 @@ class Funcionario{
         console.log(`Funcionário: ${this.nome} | Cargo: ${this.cargo} | Salário: ${this.salario}`)
     }
 }
+
+
 let continuar: string = ""
+
 
 while(continuar != "N"){
     let n:string, c:string, s:number
