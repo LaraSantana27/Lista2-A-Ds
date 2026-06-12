@@ -2,39 +2,30 @@
 // local. Depois, deve criar um objeto com as medidas e calcular a quantidade de pisos e de rodapés
 // necessárias para o local.
 
-class Retangulo{
-    Comprimento:number
-    Largura:number
+class Retangulo {
+    Comprimento: number;
+    Largura: number;
 
-    constructor(C:number, L:number) {
+    constructor(C: number, L: number) {
         this.Comprimento = C
         this.Largura = L
     }
-    mudar_valorLados(LadoC:number, LadoL:number){
-        this.Comprimento = LadoC
-        this.Largura = LadoL
+    calcularArea(): number {
+        return this.Comprimento * this.Largura
     }
-    exibirResumo():void{
-        alert(`Valor Comprimento: ${this.Comprimento} | Valor Largura: ${this.Largura}`)
+
+    calcularPerimetro(): number {
+        return (this.Comprimento + this.Largura) * 2
     }
 }
-let C:number=0, L:number=0
-let novoValor:Retangulo = new Retangulo(C,L)
+let comprimento = Number(prompt("Informe o comprimento do local:"))
+let largura = Number(prompt("Informe a largura do local:"))
 
-let op=-1
-while(op !=0){
-    alert("Digite:  (1) Para informar os valores | (2) Para alterar os valores | (3) Para exibir os valores | Caso deseje parar, digite (0) ")
-    op=Number(prompt())
-    if(op==1){
-        C=Number(prompt("Informe o Comprimento: "))
-        L=Number(prompt("Informe a Largura: "))
-    }
-    else if(op==2){
-        let LadoC=Number(prompt("Informe o novo valor de comprimento: "))
-        let LadoL=Number(prompt("Informe o novo valor da largura"))
-        novoValor.mudar_valorLados(LadoC,LadoL)
-    }
-    else if(op==3)
-        novoValor.exibirResumo()
+let local = new Retangulo(comprimento, largura)
 
-}
+alert(`Medidas do local:
+    Comprimento: ${comprimento} m
+    Largura: ${largura} m
+    Quantidade de pisos necessária: ${local.calcularArea()} m²
+    Quantidade de rodapés necessária: ${local.calcularPerimetro()} m`
+)
