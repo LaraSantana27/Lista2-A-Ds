@@ -19,15 +19,19 @@ class Retangulo{
         this.Largura = LadoL
     }
     calcularArea(){
-        let area =(this.Comprimento*this.Largura)
-        alert(`Valor Área: ${area}`)
+        return this.Comprimento*this.Largura
+        
     }
     calcularPerimetro(){
-        let perimetro=(this.Comprimento*this.Largura)/2
-        alert(`Valor Perímetro: ${perimetro}`)
+        return (this.Comprimento+this.Largura)*2
+        
     }
     exibirResumo():void{
-        alert(`Valor Comprimento: ${this.Comprimento} | Valor Largura: ${this.Largura}`)
+        alert(`Valor Comprimento: ${this.Comprimento}
+            Valor Largura: ${this.Largura}
+            Área (pisos): ${this.calcularArea()}
+            Perímetro (rodapés): ${this.calcularPerimetro()}`)
+
     }
 }
 let C:number=0, L:number=0
@@ -38,15 +42,16 @@ while(op !=0){
     alert("Digite:  (1) Para informar os valores | (2) Para alterar os valores | (3) Para exibir os valores | Caso deseje parar, digite (0) ")
     op=Number(prompt())
     if(op==1){
-        C=Number(prompt("Informe o Comprimento: "))
-        L=Number(prompt("Informe a Largura: "))
+        C = Number(prompt("Informe o Comprimento: "));
+        L = Number(prompt("Informe a Largura: "));
+        novoValor.mudar_valorLados(C, L);
     }
     else if(op==2){
         let LadoC=Number(prompt("Informe o novo valor de comprimento: "))
         let LadoL=Number(prompt("Informe o novo valor da largura"))
         novoValor.mudar_valorLados(LadoC,LadoL)
     }
-    else if(op==3)
+    else if(op==3){
         novoValor.exibirResumo()
-
+    }
 }
