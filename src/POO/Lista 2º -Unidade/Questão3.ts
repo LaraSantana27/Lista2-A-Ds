@@ -30,7 +30,7 @@ class Retangulo{
         alert(`Valor Comprimento: ${this.Comprimento}
             Valor Largura: ${this.Largura}
             Área (pisos): ${this.calcularArea()}
-            Perímetro (rodapés): ${this.calcularPerimetro()}`)
+            Perímetro (rodapés): ${this.calcularPerimetro()}`) 
 
     }
 }
