@@ -6,6 +6,7 @@
 //  Calcular Área,
 //  Calcular Perímetro.
 
+export function questãoPOO3():void{
 class Retangulo{
     Comprimento:number
     Largura:number
@@ -54,4 +55,5 @@ while(op !=0){
     else if(op==3){
         novoValor.exibirResumo()
     }
+}
 }

@@ -4,6 +4,7 @@
 // Obs: Por padrão, a cada ano que nossa pessoa envelhece, sendo a idade dela menor que 21 anos,
 // ela deve crescer 0,5 cm.
 
+export function questãoPOO5():void{
 class Pessoa{
     nome:string
     idade:number
@@ -17,4 +18,5 @@ class Pessoa{
         this.altura=a
     }
     
+}
 }

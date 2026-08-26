@@ -3,6 +3,7 @@
 //  Métodos: Mudar valor do Lado,
 //  Retornar valor do Lado e calcular Área;
 
+export function questãoPOO2():void{
 class Quadrado{
     lado:number
 
@@ -40,4 +41,5 @@ while(op != 0){
     else if (op==3){
         mudarValor.exibirResultado()
     }
+}
 }

@@ -8,6 +8,7 @@
 // específico de cada um e exibir o custo que a instituição tem com professor, técnico Administrativo e o
 // custo total que a instituição terá naquele mês.
 
+export function questãoPOO18():void{
 abstract class Funcionario{
     public nome:string
     public idade:number
@@ -69,4 +70,5 @@ while(op!==-1){
     }
 
     op=Number(prompt("Informe o cargo: (1)-Professor | (2)-Tec.Administrativo | (-1)-Para encerrar o programa"))
+}
 }
