@@ -17,8 +17,19 @@ class Pessoa{
         this.peso=p
         this.altura=a
     }
+    crescer(): number{
+        diferenca = crescimento-idade
+        if(this.idade<21){
+            this.altura += diferenca*0.5
+        }
+        return this.altura   
+    }
     
 }
+let altura=Number(prompt("Informe sua altura: "))
+let idade=Number(prompt("Informe sua idade: "))
+let crescimento=21
+let diferenca, alturaFinal
 }
 
 // Incompleta
