@@ -17,19 +17,40 @@ class Pessoa{
         this.peso=p
         this.altura=a
     }
+
+    envelhecer(idade:number){
+        let idadeAtual = this.idade +1
+        return idadeAtual
+    }
+    engordar(){
+
+    }
+    emagrecer(){
+
+    }
     crescer(): number{
         diferenca = crescimento-idade
         if(this.idade<21){
-            this.altura += diferenca*0.5
-        }
-        return this.altura   
+            altura += diferenca*0.5
+        } 
+        return altura 
     }
     
 }
+let nome=String(prompt("Informe seu nome: "))
 let altura=Number(prompt("Informe sua altura: "))
 let idade=Number(prompt("Informe sua idade: "))
+let peso=Number(prompt("Informe seu peso: "))
 let crescimento=21
-let diferenca, alturaFinal
+let diferenca
+
+let atual = new Pessoa(nome, idade, peso, altura)
+
+alert(`INFORMAÇÕES:
+    Nome: ${nome}
+    Peso: ${peso}
+    Idade: ${atual.envelhecer(idade)}
+    Quantidade de rodapés necessária: ${atual.crescer()}`
+)
 }
 
-// Incompleta
