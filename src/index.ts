@@ -66,6 +66,18 @@ document.getElementById("poo4")?.addEventListener("click",questãoPOO4)
 import { questãoPOO5 } from "./POO/Lista 2º -Unidade/Questão5.js";
 document.getElementById("poo5")?.addEventListener("click",questãoPOO5)
 
+import { questãoPOO6 } from "./POO/Lista 2º -Unidade/Questão6.js";
+document.getElementById("poo6")?.addEventListener("click",questãoPOO6)
+
+import { questãoPOO7 } from "./POO/Lista 2º -Unidade/Questão7.js";
+document.getElementById("poo7")?.addEventListener("click",questãoPOO7)
+
+import { questãoPOO8 } from "./POO/Lista 2º -Unidade/Questão8.js";
+document.getElementById("poo8")?.addEventListener("click",questãoPOO8)
+
+import { questãoPOO14 } from "./POO/Lista 2º -Unidade/Questão14.js";
+document.getElementById("poo14")?.addEventListener("click",questãoPOO14)
+
 import { questãoPOO15 } from "./POO/Lista 2º -Unidade/Questão15.js";
 document.getElementById("poo15")?.addEventListener("click",questãoPOO15)
 
