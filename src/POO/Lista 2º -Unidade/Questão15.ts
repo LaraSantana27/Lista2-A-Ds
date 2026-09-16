@@ -4,6 +4,7 @@
 // FuncionarioHorista e FuncionarioAssalariado como subclasses. O programa deve solicitar os dados via
 // teclado e calcular o salário de cada um.
 
+export function questãoPOO15():void{
 abstract class Funcionario{
     public nome:string
 
@@ -52,3 +53,4 @@ funcionarioASS.exibirSalario()
 
 let funcionarioH: FuncionarioHorista = new FuncionarioHorista("Luiza", 80, 16)
 funcionarioH.exibirSalario()
+}
