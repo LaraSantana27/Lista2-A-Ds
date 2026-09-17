@@ -19,12 +19,11 @@ class Funcionario{
         alert(`INFORMAÇÕES:
     Nome: ${this.nome}
     Cargo: ${this.cargo}
-    Novo Salário: ${this.salario}`)
+    Salário: ${this.salario}`)
     }    
 }
 
-let listarFuncionarios:Funcionario[]=[]
-let novoFuncionario:Funcionario
+const listarFuncionarios:Funcionario[]=[]
 
 let entrada=String(prompt("Deseja cadastrar um funcionário? DIGITE: (S) para continuar | (N) Parar programa ")).toUpperCase()
 
@@ -34,11 +33,13 @@ let entrada=String(prompt("Deseja cadastrar um funcionário? DIGITE: (S) para co
         let salario=Number(prompt("Informe o valor do salário: "))
 
 
-        novoFuncionario = new Funcionario(nome, cargo, salario)
+        const novoFuncionario = new Funcionario(nome, cargo, salario)
         listarFuncionarios.push(novoFuncionario)
 
         entrada=String(prompt("Deseja cadastrar um funcionário? DIGITE: (S) para continuar | (N) Parar programa ")).toUpperCase()
     }
-
+for(let i=0; i < listarFuncionarios.length; i++){
+    listarFuncionarios[i].exibirFuncionario()
+}
 
 }

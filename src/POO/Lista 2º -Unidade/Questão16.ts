@@ -50,10 +50,16 @@ abstract class Animal{
 }
 
 class Aves extends Animal{
-    migração:boolean
+    private _migração: boolean
     constructor(migração:boolean, nome:string, especie:string, idade:number, sexo:string){
         super(nome, especie, idade, sexo)
-        this.migração=migração
+        this._migração=migração
+    }
+     public get migração(): boolean {
+        return this._migração
+    }
+    public set migração(value: boolean) {
+        this._migração = value
     }
     public emitirSom(): void {
         console.log(`A ave ${this.nome} faz Pô Pô Pô Pô`)
@@ -65,10 +71,16 @@ class Aves extends Animal{
 }
 
 class Mamíferos extends Animal{
-    tipoAlimentacao:boolean
-    constructor(tipoAlimentacao:boolean, nome:string, especie:string, idade:number, sexo:string){
+    private _tipoAlimentacao: number
+    constructor(tipoAlimentacao:number, nome:string, especie:string, idade:number, sexo:string){
         super(nome,especie,idade,sexo)
-        this.tipoAlimentacao=tipoAlimentacao
+        this._tipoAlimentacao=tipoAlimentacao
+    }
+     public get tipoAlimentacao(): number {
+        return this._tipoAlimentacao
+    }
+    public set tipoAlimentacao(value: number) {
+        this._tipoAlimentacao = value
     }
     public emitirSom(): void {
         console.log(`O mamífero ${this.nome} late`)
@@ -76,7 +88,10 @@ class Mamíferos extends Animal{
     public mover(): void {
         console.log(`O mamífero ${this.nome} corre`)
     }
+
 }
+let animais: Animal[]=[]
+
 let nome=""
 let especie=""
 let idade=0
@@ -90,7 +105,16 @@ if(op==1){
     especie=String(prompt("Informe a especie da ave: "))
     idade=Number(prompt("Informe a idade da ave: "))
     sexo=String(prompt("Informe o sexo da ave F/M : ")).toUpperCase()
-    migracao=String(prompt("A ave é migratoria? S-sim/N-não"))
+    migracao=String(prompt("A ave é migratoria? S-sim/N-não")).toUpperCase()
+
+   let ave = new Aves(
+        migracao == "S",
+        nome,
+        especie,
+        idade,
+        sexo
+    )
+    animais.push(ave)
 
 }
 else if(op==2){
@@ -99,6 +123,16 @@ else if(op==2){
     idade=Number(prompt("Informe a idade do mamífero: "))
     sexo=String(prompt("Informe o sexo do mamífero F/M : ")).toUpperCase()
     alimentacao=Number(prompt("Informe o tipo de alimentação: 1-Carne | 2-folhas"))
+
+    let mamifero = new Mamíferos(
+    alimentacao,
+    nome,
+    especie,
+    idade,
+    sexo
+)
+
+animais.push(mamifero)
 
 }
 else{

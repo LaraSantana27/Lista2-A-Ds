@@ -75,6 +75,9 @@ document.getElementById("poo7")?.addEventListener("click",questãoPOO7)
 import { questãoPOO8 } from "./POO/Lista 2º -Unidade/Questão8.js";
 document.getElementById("poo8")?.addEventListener("click",questãoPOO8)
 
+import { questãoPOO9 } from "./POO/Lista 2º -Unidade/Questão9.js";
+document.getElementById("poo9")?.addEventListener("click",questãoPOO9)
+
 import { questãoPOO14 } from "./POO/Lista 2º -Unidade/Questão14.js";
 document.getElementById("poo14")?.addEventListener("click",questãoPOO14)
 
