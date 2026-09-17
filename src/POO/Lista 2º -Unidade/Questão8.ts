@@ -15,7 +15,7 @@ class Funcionario{
         this.cargo=cargo
         this.salario=salario
     }
-    exibirFuncionario(){       
+    exibirFuncionario():void{       
         alert(`INFORMAÇÕES:
     Nome: ${this.nome}
     Cargo: ${this.cargo}

@@ -5,7 +5,7 @@
 export function exercicio4Rep():void{
 
 let Qpares=0, QImpares=0
-let nume=Number(prompt("Informe valores, caso deseje para digite (-1): "))
+let nume=Number(prompt("Informe valores, caso deseje parar digite (-1): "))
 
 while(nume!==-1){
     if(nume %2!==0){
