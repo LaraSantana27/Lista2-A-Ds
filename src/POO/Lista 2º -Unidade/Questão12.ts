@@ -4,6 +4,9 @@
 // total do aluguel e exiba o resumo da locação. Por fim, o sistema deve perguntar se deseja fazer uma
 // nova locação.
 
+
+export function questãoPOO12():void{
+
 class Carro{
     private _modelo: string
     private _valorDiaria: number
@@ -35,10 +38,15 @@ class Carro{
 
     valorAluguel(){
         let aluguel=this._valorDiaria*this._qntDias
+        return aluguel
 
     }
     exibirResumo():void{
-
+    alert(`ESTOQUE:
+    Nome do Produto: ${this.modelo}
+    Preço: ${this.qntDias}
+    Quantidade: ${this.valorDiaria}
+    Valor Total: ${this.valorAluguel()}`)
     }
 }
 let op=Number(prompt("Digite (1)-Fazer Locação | (2)-Encerrar"))
@@ -52,4 +60,5 @@ while(op!==2){
         novoCadastro.exibirResumo()
 
         op=Number(prompt("Digite (1)-Fazer Locação | (2)-Encerrar"))
+}
 }

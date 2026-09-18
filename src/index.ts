@@ -81,6 +81,12 @@ document.getElementById("poo9")?.addEventListener("click",questãoPOO9)
 import { questãoPOO11 } from "./POO/Lista 2º -Unidade/Questão11.js";
 document.getElementById("poo11")?.addEventListener("click",questãoPOO11)
 
+import { questãoPOO12 } from "./POO/Lista 2º -Unidade/Questão12.js";
+document.getElementById("poo12")?.addEventListener("click",questãoPOO12)
+
+import { questãoPOO13 } from "./POO/Lista 2º -Unidade/Questão13.js";
+document.getElementById("poo13")?.addEventListener("click",questãoPOO13)
+
 import { questãoPOO14 } from "./POO/Lista 2º -Unidade/Questão14.js";
 document.getElementById("poo14")?.addEventListener("click",questãoPOO14)
 

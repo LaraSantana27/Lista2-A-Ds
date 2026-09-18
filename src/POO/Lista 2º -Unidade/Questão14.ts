@@ -47,13 +47,18 @@ class Livro{
         alert(`Livro: ${this._titulo} 
             Autor: ${this._autor} 
             Ano Publicado: ${this._anoPublicado}
-            Disponibilidade: ${this._disponibilidade}`)
+            Disponibilidade: ${this._disponibilidade ? "Disponível" : "Indisponível"}`)
     }
 }
 let listarLivro: Livro[] = []
 let quantidade: number = 0
 
 quantidade = Number(prompt("Informe quantos exemplares serão cadastrados: "))
+
+if (quantidade > 15) { 
+    quantidade = 15 
+    alert("O limite é de 15 livros.") 
+}
 
 for (let i = 0; i < quantidade; i++) {
 
