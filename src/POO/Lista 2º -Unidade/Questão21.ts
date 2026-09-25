@@ -71,9 +71,11 @@ while (continuar.toLowerCase() === "sim") {
 
     if (tipo === "1") {
         projetos.push(new ProjetoVerde(titulo, coordenador, nota))
-    } else if (tipo === "2") {
+    } 
+    else if (tipo === "2") {
         projetos.push(new ProjetoCultural(titulo, coordenador, nota))
-    } else {
+    } 
+    else {
         alert("Tipo inválido!")
     }
 
@@ -95,6 +97,7 @@ for (let i = 0; i < projetos.length; i++) {
 acimaDaMedia.reverse()
 
 let listagem = "=== PROJETOS ACIMA DA MÉDIA (ordem inversa à inscrição) ===\n"
+
 for (let i = 0; i < acimaDaMedia.length; i++) {
     listagem += `${acimaDaMedia[i].titulo} (${acimaDaMedia[i].categoria()}) - Nota: ${acimaDaMedia[i].nota}\n`
 }

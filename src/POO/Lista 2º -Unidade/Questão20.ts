@@ -73,11 +73,13 @@ while (continuar.toLowerCase() === "sim") {
 
     if (tipo === "1") {
         pedidos.push(new Pedido(mesa, valorIngredientes))
-    } else if (tipo === "2") {
+    } 
+    else if (tipo === "2") {
         let taxaEntrega = Number(prompt("Informe a taxa de entrega:"))
         let endereco = String(prompt("Informe o endereço de destino:"))
         pedidos.push(new Delivery(mesa, valorIngredientes, taxaEntrega, endereco))
-    } else {
+    }
+    else {
         alert("Tipo inválido!")
     }
 

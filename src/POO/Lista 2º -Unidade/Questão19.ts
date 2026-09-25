@@ -31,6 +31,7 @@ abstract class Sensor{
     }
 
     abstract exibirLeitura(): string
+    
     abstract emAlerta(): boolean
 }
 
@@ -62,9 +63,11 @@ while (continuar.toLowerCase() === "sim") {
 
     if (tipo === "1") {
         sensores.push(new SensorTemperatura(codigo, leitura))
-    } else if (tipo === "2") {
+    }
+    else if (tipo === "2") {
         sensores.push(new SensorPressao(codigo, leitura))
-    } else {
+    }
+    else {
         alert("Tipo inválido!")
     }
 
