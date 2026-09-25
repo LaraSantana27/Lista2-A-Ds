@@ -55,6 +55,8 @@ class SensorPressao extends Sensor{
 
 let sensores: Sensor[] = []
 let continuar=Number(prompt("Informe 1-cadastrar | 2-parar"))
+let temperatura:SensorTemperatura
+let pressao:SensorPressao
 
 while (continuar !== 2) {
     let tipo = Number(prompt("Tipo de sensor: 1-Temperatura | 2-Pressão"))
@@ -62,10 +64,12 @@ while (continuar !== 2) {
     let leitura = Number(prompt("Informe a leitura registrada:"))
 
     if (tipo == 1) {
-        sensores.push(new SensorTemperatura(codigo, leitura))
+        temperatura = new SensorTemperatura(codigo, leitura)
+        sensores.push(temperatura)
     }
     else if (tipo == 2) {
-        sensores.push(new SensorPressao(codigo, leitura))
+        pressao = new SensorPressao(codigo, leitura)
+        sensores.push(pressao)
     }
     else {
         alert("Tipo inválido!")

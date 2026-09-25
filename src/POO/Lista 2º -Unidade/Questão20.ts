@@ -64,7 +64,9 @@ class Delivery extends Pedido{
 }
 
 let pedidos: Pedido[] = []
-let continuar=Number(prompt("Informe 1-continuar | 2-parar"))
+let continuar=Number(prompt("Informe 1-cadastrar pedido | 2-parar"))
+let pedido:Pedido
+let delivery:Delivery
 
 while (continuar !==2 ){
     let tipo = Number(prompt("Tipo de pedido: 1-Mesa | 2-Delivery"))
@@ -72,26 +74,25 @@ while (continuar !==2 ){
     let valorIngredientes = Number(prompt("Informe o valor dos ingredientes:"))
 
     if (tipo == 1) {
-        pedidos.push(new Pedido(mesa, valorIngredientes))
+        pedido = new Pedido(mesa, valorIngredientes)
+        pedidos.push(pedido)
     } 
     else if (tipo == 2) {
         let taxaEntrega = Number(prompt("Informe a taxa de entrega:"))
         let endereco = String(prompt("Informe o endereço de destino:"))
 
-        pedidos.push(new Delivery(mesa, valorIngredientes, taxaEntrega, endereco))
+        delivery = new Delivery(mesa, valorIngredientes, taxaEntrega, endereco)
+        pedidos.push(delivery)
     }
     else {
         alert("Tipo inválido!")
     }
-
-    continuar = Number(prompt("Deseja registrar outro pedido? (sim/não)"))
+    continuar = Number(prompt("Deseja registrar outro pedido? (1-sim/2-não)"))
 }
 
 let faturamentoTotal = 0
 for (let i = 0; i < pedidos.length; i++) {
     faturamentoTotal += pedidos[i].calcularValorFinal()
 }
-
 alert(`Faturamento total da noite: R$ ${faturamentoTotal}`)
-
 }

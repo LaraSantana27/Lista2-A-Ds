@@ -4,6 +4,8 @@
 // comportamento de ‘emitir som’ e ‘mover’ diferente. O sistema deve cadastrar animais, listar por tipo
 // (Mamíferos ou Aves) e simular a "hora da alimentação" chamando o método de som de cada um.
 
+export function questãoPOO16():void{
+
 abstract class Animal{
     private _nome: string 
     private _especie: string  
@@ -138,4 +140,5 @@ animais.push(mamifero)
 }
 else{
     alert("Opção Invalida!")
+}
 }

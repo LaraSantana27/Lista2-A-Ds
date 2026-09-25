@@ -61,7 +61,9 @@ class ProjetoCultural extends Projeto{
 }
 
 let projetos: Projeto[] = []
-let continuar=Number(prompt("Informe 1-continuar | 2-parar"))
+let continuar=Number(prompt("Informe 1-Inscrever Projeto | 2-parar"))
+let verde:ProjetoVerde
+let cultural:ProjetoCultural
 
 while (continuar !== 2) {
     let tipo = Number(prompt("Tipo de projeto: 1-Verde | 2-Cultural"))
@@ -70,16 +72,17 @@ while (continuar !== 2) {
     let nota = Number(prompt("Informe a nota de avaliação (0 a 10):"))
 
     if (tipo == 1) {
-        projetos.push(new ProjetoVerde(titulo, coordenador, nota))
+        verde = new ProjetoVerde(titulo, coordenador, nota)
+        projetos.push(verde)
     } 
     else if (tipo == 2) {
-        projetos.push(new ProjetoCultural(titulo, coordenador, nota))
+        cultural = new ProjetoCultural(titulo, coordenador, nota)
+        projetos.push(cultural)
     } 
     else {
         alert("Tipo inválido!")
     }
-
-    continuar = Number(prompt("Deseja inscrever outro projeto? (sim/não)"))
+    continuar = Number(prompt("Deseja inscrever outro projeto? (1-sim/2-não)"))
 }
 
 let somaNotas = 0
@@ -91,7 +94,6 @@ let media = somaNotas / projetos.length
 let acimaDaMedia: Projeto[] = []
 for (let i = 0; i < projetos.length; i++) {
     if (projetos[i].nota > media) {
-
         acimaDaMedia.push(projetos[i])
     }
 }

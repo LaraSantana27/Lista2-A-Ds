@@ -9,26 +9,22 @@
 // manutenção imediata.
 
 abstract class Veiculo {
-    private _placa: string
+    private _placa: number
     private _QAtual: number
 
-    constructor(placa: string, QAtual: number) {
+    constructor(placa: number, QAtual: number) {
         this._placa = placa
         this._QAtual = QAtual
     }
-
-    public get placa(): string {
+    public get placa(): number {
         return this._placa
     }
-
-    public set placa(value: string) {
+    public set placa(value: number) {
         this._placa = value
     }
-
     public get QAtual(): number {
         return this._QAtual
     }
-
     public set QAtual(value: number) {
         this._QAtual = value
     }
@@ -37,69 +33,53 @@ abstract class Veiculo {
 }
 
 class Onibus extends Veiculo {
-
     revisao(): boolean {
         return this.QAtual % 10000 === 0
     }
 }
-
 class Ambulancia extends Veiculo {
-
     revisao(): boolean {
         return this.QAtual % 5000 === 0
     }
 }
 
 let frota: Veiculo[] = []
-
+let onibus:Onibus
+let ambulancia:Ambulancia
 let quantidade: number = Number(prompt("Quantos veículos serão cadastrados?"))
 
 for (let i = 0; i < quantidade; i++) {
+    let tipo=Number(prompt("Digite o tipo do veículo (1 - Ônibus / 2 - Ambulância)"))
+    let placa=Number(prompt("Digite a placa:"))
+    let quilometragem=Number(prompt("Digite a quilometragem atual:"))
 
-    let tipo: string = prompt(
-        "Digite o tipo do veículo (1 - Ônibus / 2 - Ambulância):"
-    )!
-
-    let placa: string = prompt("Digite a placa:")!
-    let quilometragem: number = Number(
-        prompt("Digite a quilometragem atual:")
-    )
-
-    if (tipo === "1") {
-        frota.push(new Onibus(placa, quilometragem))
+    if (tipo == 1) {
+        onibus=new Onibus(placa , quilometragem)
+        frota.push(onibus)
     } 
-    else if (tipo === "2") {
-        frota.push(new Ambulancia(placa, quilometragem))
+    else if (tipo == 2) {
+        ambulancia=new Ambulancia(placa, quilometragem)
+        frota.push(ambulancia)
     }
 }
 
-let placaBusca: string = prompt(
-    "Digite a placa do veículo que deseja consultar:"
-)!
+let placaBusca=Number(prompt("Digite a placa do veículo que deseja consultar:"))
+let quilometragemAtual=Number(prompt("Informe a quilometragem atual do veículo:"))
+let encontrado = false
 
-let quilometragemAtual: number = Number(
-    prompt("Informe a quilometragem atual do veículo:")
-)
+for (let i = 0; i < frota.length; i++) {
+    if (frota[i].placa == placaBusca) {
+        frota[i].QAtual = quilometragemAtual
 
-let encontrado: boolean = false
-
-for (let veiculo of frota) {
-
-    if (veiculo.placa === placaBusca){
-        encontrado = true
-        veiculo.QAtual = quilometragemAtual
-        if (veiculo.revisao()) {
-            console.log(
-                `O veículo ${veiculo.placa} precisa ser retido para manutenção imediata.`
-            )
+        if (frota[i].revisao()) {
+            alert("O veículo precisa ser retido para manutenção imediata!")
         } 
         else {
-            console.log(
-                `O veículo ${veiculo.placa} não precisa de manutenção imediata.`
-            )
+            alert("O veículo não precisa de manutenção imediata.")
+        }
+        encontrado = true
     }
-
-if (!encontrado) {
-    console.log("Veículo não encontrado na frota.")
-} 
+        if (encontrado == false) {
+            alert("Veículo não encontrado!")
+}
 }

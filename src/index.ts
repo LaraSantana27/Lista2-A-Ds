@@ -93,5 +93,20 @@ document.getElementById("poo14")?.addEventListener("click",questãoPOO14)
 import { questãoPOO15 } from "./POO/Lista 2º -Unidade/Questão15.js";
 document.getElementById("poo15")?.addEventListener("click",questãoPOO15)
 
+import { questãoPOO16 } from "./POO/Lista 2º -Unidade/Questão16.js";
+document.getElementById("poo16")?.addEventListener("click",questãoPOO16)
+
+import { questãoPOO17 } from "./POO/Lista 2º -Unidade/Questão17.js";
+document.getElementById("poo17")?.addEventListener("click",questãoPOO17)
+
 import { questãoPOO18 } from "./POO/Lista 2º -Unidade/Questão18.js";
 document.getElementById("poo18")?.addEventListener("click",questãoPOO18)
+
+import { questãoPOO19 } from "./POO/Lista 2º -Unidade/Questão19.js";
+document.getElementById("poo19")?.addEventListener("click",questãoPOO19)
+
+import { questãoPOO20 } from "./POO/Lista 2º -Unidade/Questão20.js";
+document.getElementById("poo20")?.addEventListener("click",questãoPOO20)
+
+import { questãoPOO21 } from "./POO/Lista 2º -Unidade/Questão21.js";
+document.getElementById("poo21")?.addEventListener("click",questãoPOO21)
