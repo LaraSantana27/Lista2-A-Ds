@@ -18,7 +18,7 @@ abstract class Projeto{
     constructor(titulo:string, coordenador:string, nota:number){
         this._titulo=titulo
         this._coordenador=coordenador
-        this._nota = this.validarNota(nota)
+        this._nota = nota
     }
     public get titulo(): string {
         return this._titulo
@@ -36,10 +36,10 @@ abstract class Projeto{
         return this._nota
     }
     public set nota(value: number) {
-        this._nota = this.validarNota(value)
+        this._nota = value
     }
 
-    private validarNota(valor:number): number {
+    validarNota(valor:number): number {
         if (valor < 0) return 0
         if (valor > 10) return 10
         return valor
@@ -61,25 +61,25 @@ class ProjetoCultural extends Projeto{
 }
 
 let projetos: Projeto[] = []
-let continuar = "sim"
+let continuar=Number(prompt("Informe 1-continuar | 2-parar"))
 
-while (continuar.toLowerCase() === "sim") {
-    let tipo = String(prompt("Tipo de projeto: 1-Verde | 2-Cultural")).trim()
+while (continuar !== 2) {
+    let tipo = Number(prompt("Tipo de projeto: 1-Verde | 2-Cultural"))
     let titulo = String(prompt("Informe o título do projeto:"))
     let coordenador = String(prompt("Informe o coordenador do projeto:"))
     let nota = Number(prompt("Informe a nota de avaliação (0 a 10):"))
 
-    if (tipo === "1") {
+    if (tipo == 1) {
         projetos.push(new ProjetoVerde(titulo, coordenador, nota))
     } 
-    else if (tipo === "2") {
+    else if (tipo == 2) {
         projetos.push(new ProjetoCultural(titulo, coordenador, nota))
     } 
     else {
         alert("Tipo inválido!")
     }
 
-    continuar = String(prompt("Deseja inscrever outro projeto? (sim/não)"))
+    continuar = Number(prompt("Deseja inscrever outro projeto? (sim/não)"))
 }
 
 let somaNotas = 0
@@ -91,19 +91,19 @@ let media = somaNotas / projetos.length
 let acimaDaMedia: Projeto[] = []
 for (let i = 0; i < projetos.length; i++) {
     if (projetos[i].nota > media) {
+
         acimaDaMedia.push(projetos[i])
     }
 }
 acimaDaMedia.reverse()
 
-let listagem = "=== PROJETOS ACIMA DA MÉDIA (ordem inversa à inscrição) ===\n"
+let listagem = "=== PROJETOS ACIMA DA MÉDIA (ordem inversa à inscrição) ==="
 
 for (let i = 0; i < acimaDaMedia.length; i++) {
-    listagem += `${acimaDaMedia[i].titulo} (${acimaDaMedia[i].categoria()}) - Nota: ${acimaDaMedia[i].nota}\n`
+    listagem += `${acimaDaMedia[i].titulo} (${acimaDaMedia[i].categoria()}) - Nota: ${acimaDaMedia[i].nota}`
 }
 
-alert(`Média das notas: ${media.toFixed(2)}
-
+alert(`Média das notas: ${media}
 ${listagem}`)
 
 }

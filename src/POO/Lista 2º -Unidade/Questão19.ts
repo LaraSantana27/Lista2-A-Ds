@@ -31,7 +31,7 @@ abstract class Sensor{
     }
 
     abstract exibirLeitura(): string
-    
+
     abstract emAlerta(): boolean
 }
 
@@ -54,24 +54,23 @@ class SensorPressao extends Sensor{
 }
 
 let sensores: Sensor[] = []
-let continuar = "sim"
+let continuar=Number(prompt("Informe 1-cadastrar | 2-parar"))
 
-while (continuar.toLowerCase() === "sim") {
-    let tipo = String(prompt("Tipo de sensor: 1-Temperatura | 2-Pressão")).trim()
+while (continuar !== 2) {
+    let tipo = Number(prompt("Tipo de sensor: 1-Temperatura | 2-Pressão"))
     let codigo = String(prompt("Informe o código identificador do sensor:"))
     let leitura = Number(prompt("Informe a leitura registrada:"))
 
-    if (tipo === "1") {
+    if (tipo == 1) {
         sensores.push(new SensorTemperatura(codigo, leitura))
     }
-    else if (tipo === "2") {
+    else if (tipo == 2) {
         sensores.push(new SensorPressao(codigo, leitura))
     }
     else {
         alert("Tipo inválido!")
     }
-
-    continuar = String(prompt("Deseja cadastrar outra leitura? (sim/não)"))
+    continuar=Number(prompt("Informe 1-cadastrar | 2-parar"))
 }
 
 let sensoresEmAlerta: Sensor[] = []
@@ -82,9 +81,9 @@ for (let i = 0; i < sensores.length; i++) {
 }
 
 if (sensoresEmAlerta.length > 0) {
-    let relatorio = "=== SENSORES EM ALERTA ===\n"
+    let relatorio = "=== SENSORES EM ALERTA ==="
     for (let i = 0; i < sensoresEmAlerta.length; i++) {
-        relatorio += sensoresEmAlerta[i].exibirLeitura() + "\n"
+        relatorio += sensoresEmAlerta[i].exibirLeitura()
     }
     alert(relatorio)
 } else {

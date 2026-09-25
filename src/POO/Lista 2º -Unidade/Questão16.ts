@@ -51,6 +51,7 @@ abstract class Animal{
 
 class Aves extends Animal{
     private _migração: boolean
+    
     constructor(migração:boolean, nome:string, especie:string, idade:number, sexo:string){
         super(nome, especie, idade, sexo)
         this._migração=migração

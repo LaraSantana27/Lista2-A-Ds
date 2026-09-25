@@ -64,26 +64,27 @@ class Delivery extends Pedido{
 }
 
 let pedidos: Pedido[] = []
-let continuar = "sim"
+let continuar=Number(prompt("Informe 1-continuar | 2-parar"))
 
-while (continuar.toLowerCase() === "sim") {
-    let tipo = String(prompt("Tipo de pedido: 1-Mesa | 2-Delivery")).trim()
+while (continuar !==2 ){
+    let tipo = Number(prompt("Tipo de pedido: 1-Mesa | 2-Delivery"))
     let mesa = Number(prompt("Informe o número da mesa (ou 0 para delivery):"))
     let valorIngredientes = Number(prompt("Informe o valor dos ingredientes:"))
 
-    if (tipo === "1") {
+    if (tipo == 1) {
         pedidos.push(new Pedido(mesa, valorIngredientes))
     } 
-    else if (tipo === "2") {
+    else if (tipo == 2) {
         let taxaEntrega = Number(prompt("Informe a taxa de entrega:"))
         let endereco = String(prompt("Informe o endereço de destino:"))
+
         pedidos.push(new Delivery(mesa, valorIngredientes, taxaEntrega, endereco))
     }
     else {
         alert("Tipo inválido!")
     }
 
-    continuar = String(prompt("Deseja registrar outro pedido? (sim/não)"))
+    continuar = Number(prompt("Deseja registrar outro pedido? (sim/não)"))
 }
 
 let faturamentoTotal = 0

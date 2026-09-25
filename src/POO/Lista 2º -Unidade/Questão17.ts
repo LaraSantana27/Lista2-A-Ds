@@ -8,54 +8,47 @@
 // almoçou no dia, mostrando mensagens personalizadas para cada tipo de usuário através de um método
 // comum de identificação, além de exibir a quantidade total de acessos de alunos e servidores.
 
-export function questãoPOO17():void{
+export function questãoPOO17(): void {
 
-    abstract class Usuario{
+    abstract class Usuario {
         private _id: number
         private _nome: string
 
-        constructor(id:number, nome:string){
-            this._id=id
-            this._nome=nome
+        constructor(id: number, nome: string) {
+            this._id = id
+            this._nome = nome
         }
-
         public get id(): number {
             return this._id
         }
-
         public set id(value: number) {
             this._id = value
         }
-
         public get nome(): string {
             return this._nome
         }
-
         public set nome(value: string) {
             this._nome = value
         }
-
         abstract identificar(): string
 
         exibirResumo(): string {
             return `ID: ${this.id}
-                Nome: ${this.nome}
-                ${this.identificar()}`
+            Nome: ${this.nome}
+            ${this.identificar()}`
         }
     }
 
-    class Aluno extends Usuario{
+    class Aluno extends Usuario {
         private _curso: string
 
-        constructor(id:number, nome:string, curso:string){
+        constructor(id: number, nome: string, curso: string) {
             super(id, nome)
-            this._curso=curso
+            this._curso = curso
         }
-
         public get curso(): string {
             return this._curso
         }
-
         public set curso(value: string) {
             this._curso = value
         }
@@ -65,18 +58,17 @@ export function questãoPOO17():void{
         }
     }
 
-    class Servidor extends Usuario{
+
+    class Servidor extends Usuario {
         private _departamento: string
 
-        constructor(id:number, nome:string, departamento:string){
+        constructor(id: number, nome: string, departamento: string) {
             super(id, nome)
-            this._departamento=departamento
+            this._departamento = departamento
         }
-
         public get departamento(): string {
             return this._departamento
         }
-
         public set departamento(value: string) {
             this._departamento = value
         }
@@ -89,75 +81,68 @@ export function questãoPOO17():void{
     let usuarios: Usuario[] = []
     let historico: Usuario[] = []
 
-    let comando = Number(prompt("Digite 1- para cadastrar novo usuário, 2- para registrar acesso ou 3- para finalizar:"))
+    let comando = Number(prompt("Digite 1- para cadastrar novo usuário,2- para registrar acesso ou 3- para finalizar:"))
 
     while (comando != 3) {
-
         if (comando == 1) {
-
             let tipo = String(prompt("Tipo de usuário: 1-Aluno | 2-Servidor"))
             let id = Number(prompt("Informe o identificador do usuário:"))
             let nome = String(prompt("Informe o nome completo:"))
 
             if (tipo === "1") {
-
                 let curso = String(prompt("Informe o curso do aluno:"))
 
                 usuarios.push(new Aluno(id, nome, curso))
 
-            } else if (tipo === "2") {
-
+            } 
+            else if (tipo === "2") {
                 let departamento = String(prompt("Informe o departamento do servidor:"))
 
                 usuarios.push(new Servidor(id, nome, departamento))
 
-            } else {
+            } 
+            else {
                 alert("Tipo inválido!")
             }
-
-        } else if (comando == 2) {
-
+        } 
+        else if (comando == 2) {
             let idBusca = Number(prompt("Informe o identificador do usuário que passou na catraca:"))
-
             let usuario: Usuario | undefined = undefined
 
             for (let i = 0; i < usuarios.length; i++) {
-
                 if (usuarios[i].id === idBusca) {
                     usuario = usuarios[i]
                 }
-
             }
 
             if (usuario) {
                 historico.push(usuario)
                 alert("Acesso registrado!")
+
             } else {
                 alert("Usuário não encontrado!")
             }
         }
 
+
         comando = Number(prompt("Digite 1- para cadastrar novo usuário, 2- para registrar acesso ou 3- para finalizar:"))
     }
 
-    let mensagens = "=== ALMOÇARAM HOJE ===\n"
-
+    let mensagens = "=== ALMOÇARAM HOJE ==="
     let totalAlunos = 0
     let totalServidores = 0
 
     for (let i = 0; i < historico.length; i++) {
-
-        mensagens += historico[i].exibirResumo() + "\n"
+        mensagens += historico[i].exibirResumo()
 
         if (historico[i] instanceof Aluno) {
             totalAlunos++
-        } else {
+        } 
+        else if (historico[i] instanceof Servidor) {
             totalServidores++
         }
     }
-
     alert(`${mensagens}
-
-Total de acessos de alunos: ${totalAlunos}
-Total de acessos de servidores: ${totalServidores}`)
+        Total de acessos de alunos: ${totalAlunos}
+        Total de acessos de servidores: ${totalServidores}`)
 }
