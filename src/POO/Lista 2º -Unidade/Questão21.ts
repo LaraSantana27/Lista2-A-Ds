@@ -89,9 +89,10 @@ let somaNotas = 0
 for (let i = 0; i < projetos.length; i++) {
     somaNotas += projetos[i].nota
 }
-let media = somaNotas / projetos.length
 
+let media = somaNotas / projetos.length
 let acimaDaMedia: Projeto[] = []
+
 for (let i = 0; i < projetos.length; i++) {
     if (projetos[i].nota > media) {
         acimaDaMedia.push(projetos[i])
@@ -99,12 +100,11 @@ for (let i = 0; i < projetos.length; i++) {
 }
 acimaDaMedia.reverse()
 
-let listagem = "=== PROJETOS ACIMA DA MÉDIA (ordem inversa à inscrição) ==="
+let listagem = "// PROJETOS ACIMA DA MÉDIA //"
 
 for (let i = 0; i < acimaDaMedia.length; i++) {
     listagem += `${acimaDaMedia[i].titulo} (${acimaDaMedia[i].categoria()}) - Nota: ${acimaDaMedia[i].nota}`
 }
-
 alert(`Média das notas: ${media}
 ${listagem}`)
 

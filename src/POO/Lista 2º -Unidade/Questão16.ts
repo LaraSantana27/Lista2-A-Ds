@@ -22,35 +22,27 @@ export function questãoPOO16(): void {
         public get nome(): string {
             return this._nome
         }
-
         public set nome(value: string) {
             this._nome = value
         }
-
         public get especie(): string {
             return this._especie
         }
-
         public set especie(value: string) {
             this._especie = value
         }
-
         public get idade(): number {
             return this._idade
         }
-
         public set idade(value: number) {
             this._idade = value
         }
-
         public get sexo(): string {
             return this._sexo
         }
-
         public set sexo(value: string) {
             this._sexo = value
         }
-
         abstract emitirSom(): void
 
         abstract mover(): void

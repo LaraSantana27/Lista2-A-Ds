@@ -83,15 +83,16 @@ for (let i = 0; i < sensores.length; i++) {
         sensoresEmAlerta.push(sensores[i])
     }
 }
-
 if (sensoresEmAlerta.length > 0) {
     let relatorio = "=== SENSORES EM ALERTA ==="
+
     for (let i = 0; i < sensoresEmAlerta.length; i++) {
         relatorio += sensoresEmAlerta[i].exibirLeitura()
     }
     alert(relatorio)
-} else {
+    }   
+    else {
     alert("Nenhum sensor disparou alerta.")
-}
+    }
 
 }

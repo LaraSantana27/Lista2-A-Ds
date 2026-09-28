@@ -29,4 +29,67 @@ abstract class Curso{
         this._cargaHoraria = value
     }
 
+    abstract emitirCertificado():void
+    
+}
+class CursoLivre extends Curso{
+        emitirCertificado() {
+            alert(`${this.titulo}: Certificado liberado!`)
+        }
+    }
+
+class CursoTecnico extends Curso{
+    private _notaProjeto: number
+
+        constructor(titulo:string, cargaHoraria:number, notaProjeto:number){
+            super(titulo, cargaHoraria)
+            this._notaProjeto=notaProjeto
+        }
+
+    public get numeroProjeto(): number {
+        return this._notaProjeto
+    }
+    public set numeroProjeto(value: number) {
+        this._notaProjeto = value
+    }
+
+    emitirCertificado(){
+        if (this._notaProjeto >= 7){
+                alert(`${this.titulo}: Certificado liberado!`)
+            }
+            else{
+                alert(`${this.titulo}: Certificado negado!`)
+            }
+    }
+}
+
+let cursos:Curso[]=[]
+let op=0
+let livre:CursoLivre
+let tecnico:CursoTecnico
+
+while(op !=2){
+    let tipo:number=Number(prompt("Informe qual tipo de curso: (1-Curso Livre | 2-Curso Tecnico) "))
+
+    if(tipo == 1){
+        let tituloL=String(prompt("Informe o titulo do curso: "))
+        let cargaHL=Number(prompt("Informe a carga horária: "))
+
+        livre = new CursoLivre(tituloL, cargaHL)
+        cursos.push(livre)
+    }
+
+    else if(tipo == 2){
+        let tituloT=String(prompt("Informe o titulo do curso: "))
+        let cargaHT=Number(prompt("Informe a carga horária: "))
+        let nota=Number(prompt("Informe a nota: "))
+
+        tecnico = new CursoTecnico(tituloT, cargaHT, nota)
+        cursos.push(tecnico)
+    }
+    op=Number(prompt("Informe qual tipo de curso: (1-sim / 2-não) "))
+}
+
+for (let certificado of cursos){
+    certificado.emitirCertificado()
 }

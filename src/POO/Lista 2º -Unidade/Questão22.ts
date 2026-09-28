@@ -49,7 +49,7 @@ let ambulancia:Ambulancia
 let quantidade: number = Number(prompt("Quantos veículos serão cadastrados?"))
 
 for (let i = 0; i < quantidade; i++) {
-    let tipo=Number(prompt("Digite o tipo do veículo (1 - Ônibus / 2 - Ambulância)"))
+    let tipo=Number(prompt("Digite o tipo do veículo (1 - Ônibus | 2 - Ambulância)"))
     let placa=Number(prompt("Digite a placa:"))
     let quilometragem=Number(prompt("Digite a quilometragem atual:"))
 

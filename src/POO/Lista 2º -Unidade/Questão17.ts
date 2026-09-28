@@ -80,6 +80,8 @@ export function questãoPOO17(): void {
 
     let usuarios: Usuario[] = []
     let historico: Usuario[] = []
+    let novoAluno:Aluno
+    let novoServidor:Servidor
 
     let comando = Number(prompt("Digite 1- para cadastrar novo usuário,2- para registrar acesso ou 3- para finalizar:"))
 
@@ -91,14 +93,14 @@ export function questãoPOO17(): void {
 
             if (tipo === "1") {
                 let curso = String(prompt("Informe o curso do aluno:"))
-
-                usuarios.push(new Aluno(id, nome, curso))
-
+                novoAluno=new Aluno(id, nome, curso)
+                usuarios.push(novoAluno)
+            
             } 
             else if (tipo === "2") {
                 let departamento = String(prompt("Informe o departamento do servidor:"))
-
-                usuarios.push(new Servidor(id, nome, departamento))
+                novoServidor=new Servidor(id, nome, departamento)
+                usuarios.push(novoServidor)
 
             } 
             else {
@@ -106,7 +108,7 @@ export function questãoPOO17(): void {
             }
         } 
         else if (comando == 2) {
-            let idBusca = Number(prompt("Informe o identificador do usuário que passou na catraca:"))
+            let idBusca = Number(prompt("Informe o identificador do usuário:"))
             let usuario: Usuario | undefined = undefined
 
             for (let i = 0; i < usuarios.length; i++) {
@@ -114,35 +116,34 @@ export function questãoPOO17(): void {
                     usuario = usuarios[i]
                 }
             }
-
             if (usuario) {
                 historico.push(usuario)
                 alert("Acesso registrado!")
 
-            } else {
+            } 
+            else {
                 alert("Usuário não encontrado!")
             }
         }
-
-
         comando = Number(prompt("Digite 1- para cadastrar novo usuário, 2- para registrar acesso ou 3- para finalizar:"))
     }
-
     let mensagens = "=== ALMOÇARAM HOJE ==="
     let totalAlunos = 0
     let totalServidores = 0
 
-    for (let i = 0; i < historico.length; i++) {
-        mensagens += historico[i].exibirResumo()
+    for (let usuario of historico){
 
-        if (historico[i] instanceof Aluno) {
+        if(usuario instanceof Aluno){
+            console.log(usuario.identificar())
             totalAlunos++
-        } 
-        else if (historico[i] instanceof Servidor) {
+
+        } else if (usuario instanceof Servidor){
+            console.log(usuario.identificar())
             totalServidores++
         }
     }
     alert(`${mensagens}
         Total de acessos de alunos: ${totalAlunos}
         Total de acessos de servidores: ${totalServidores}`)
+
 }

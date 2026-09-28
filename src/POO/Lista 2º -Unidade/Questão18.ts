@@ -73,13 +73,12 @@ while(op!==-1){
         funcionario.push(tecnico)
         tecnico.exibirResumo()
         custoTecnico += tecnico.calcularSalario()
-}
+    }
     else{
         console.log("Opção Invalida!")
     }
 
     op=Number(prompt("Informe o cargo: (1)-Professor | (2)-Tec.Administrativo | (-1)-Para encerrar o programa"))
-
 }
     console.log(`Custo com Professores: R$ ${custoProfessor}`)
     console.log(`Custo com Técnicos: R$ ${custoTecnico}`)
