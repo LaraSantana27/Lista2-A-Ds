@@ -8,6 +8,8 @@
 // um array. No final, o sistema percorre a lista e dispara o método emitirCertificado() de cada
 // curso, exibindo quais certificados foram liberados e quais ficaram pendentes.
 
+export function questãoPOO36():void{
+
 abstract class Curso{
     private _titulo: string
     private _cargaHoraria: number
@@ -87,9 +89,10 @@ while(op !=2){
         tecnico = new CursoTecnico(tituloT, cargaHT, nota)
         cursos.push(tecnico)
     }
-    op=Number(prompt("Informe qual tipo de curso: (1-sim / 2-não) "))
+    op=Number(prompt("Deseja informar outro curso? (1-sim / 2-não) "))
 }
 
 for (let certificado of cursos){
     certificado.emitirCertificado()
+}
 }

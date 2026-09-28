@@ -110,3 +110,9 @@ document.getElementById("poo20")?.addEventListener("click",questãoPOO20)
 
 import { questãoPOO21 } from "./POO/Lista 2º -Unidade/Questão21.js";
 document.getElementById("poo21")?.addEventListener("click",questãoPOO21)
+
+import { questãoPOO22 } from "./POO/Lista 2º -Unidade/Questão22.js";
+document.getElementById("poo22")?.addEventListener("click",questãoPOO22)
+
+import { questãoPOO36 } from "./POO/Lista 2º -Unidade/Questão36.js";
+document.getElementById("poo36")?.addEventListener("click",questãoPOO36)

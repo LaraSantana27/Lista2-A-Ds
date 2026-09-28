@@ -8,6 +8,8 @@
 // objetos, o sistema responde textualmente se aquele veículo específico precisa ou não ser retido para
 // manutenção imediata.
 
+export function questãoPOO22():void{
+
 abstract class Veiculo {
     private _placa: number
     private _QAtual: number
@@ -82,4 +84,6 @@ for (let i = 0; i < frota.length; i++) {
         if (encontrado == false) {
             alert("Veículo não encontrado!")
 }
+}
+
 }
