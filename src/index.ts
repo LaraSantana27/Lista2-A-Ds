@@ -117,8 +117,41 @@ document.getElementById("poo22")?.addEventListener("click",questãoPOO22)
 import { questãoPOO30 } from "./POO/Lista 2º -Unidade/Questão30.js";
 document.getElementById("poo30")?.addEventListener("click",questãoPOO30)
 
+import { questãoPOO33 } from "./POO/Lista 2º -Unidade/Questão33.js";
+document.getElementById("poo33")?.addEventListener("click",questãoPOO33)
+
+import { questãoPOO34 } from "./POO/Lista 2º -Unidade/Questão34.js";
+document.getElementById("poo34")?.addEventListener("click",questãoPOO34)
+
 import { questãoPOO35 } from "./POO/Lista 2º -Unidade/Questão35.js";
 document.getElementById("poo35")?.addEventListener("click",questãoPOO35)
 
 import { questãoPOO36 } from "./POO/Lista 2º -Unidade/Questão36.js";
 document.getElementById("poo36")?.addEventListener("click",questãoPOO36)
+
+import { questãoPOO37 } from "./POO/Lista 2º -Unidade/Questão37.js";
+document.getElementById("poo37")?.addEventListener("click",questãoPOO37)
+
+import { questãoPOO39 } from "./POO/Lista 2º -Unidade/Questão39.js";
+document.getElementById("poo39")?.addEventListener("click",questãoPOO39)
+
+import { questãoPOO43 } from "./POO/Lista 2º -Unidade/Questão43.js";
+document.getElementById("poo43")?.addEventListener("click",questãoPOO43)
+
+import { questãoPOO44 } from "./POO/Lista 2º -Unidade/Questão44.js";
+document.getElementById("poo44")?.addEventListener("click",questãoPOO44)
+
+import { questãoPOO45 } from "./POO/Lista 2º -Unidade/Questão45.js";
+document.getElementById("poo45")?.addEventListener("click",questãoPOO45)
+
+import { questãoPOO46 } from "./POO/Lista 2º -Unidade/Questão46.js";
+document.getElementById("poo46")?.addEventListener("click",questãoPOO46)
+
+import { questãoPOO47 } from "./POO/Lista 2º -Unidade/Questão47.js";
+document.getElementById("poo47")?.addEventListener("click",questãoPOO47)
+
+import { questãoPOO48 } from "./POO/Lista 2º -Unidade/Questão48.js";
+document.getElementById("poo48")?.addEventListener("click",questãoPOO48)
+
+import { questãoPOO49 } from "./POO/Lista 2º -Unidade/Questão49.js";
+document.getElementById("poo49")?.addEventListener("click",questãoPOO49)

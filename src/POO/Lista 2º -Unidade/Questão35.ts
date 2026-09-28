@@ -97,8 +97,3 @@ for(let i=0; i<pacientes.length; i++){
 }
 alert(`Total de pacientes prioritários: ${totalPrioritarios}`)
 }
-
-
-
-
-
