@@ -80,7 +80,7 @@ while(op !=2){
         livre = new CursoLivre(tituloL, cargaHL)
         cursos.push(livre)
     }
-
+    
     else if(tipo == 2){
         let tituloT=String(prompt("Informe o titulo do curso: "))
         let cargaHT=Number(prompt("Informe a carga horária: "))
@@ -88,6 +88,10 @@ while(op !=2){
 
         tecnico = new CursoTecnico(tituloT, cargaHT, nota)
         cursos.push(tecnico)
+    }
+
+    else{
+        alert("Opção Inválida1")
     }
     op=Number(prompt("Deseja informar outro curso? (1-sim / 2-não) "))
 }

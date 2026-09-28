@@ -114,5 +114,11 @@ document.getElementById("poo21")?.addEventListener("click",questãoPOO21)
 import { questãoPOO22 } from "./POO/Lista 2º -Unidade/Questão22.js";
 document.getElementById("poo22")?.addEventListener("click",questãoPOO22)
 
+import { questãoPOO30 } from "./POO/Lista 2º -Unidade/Questão30.js";
+document.getElementById("poo30")?.addEventListener("click",questãoPOO30)
+
+import { questãoPOO35 } from "./POO/Lista 2º -Unidade/Questão35.js";
+document.getElementById("poo35")?.addEventListener("click",questãoPOO35)
+
 import { questãoPOO36 } from "./POO/Lista 2º -Unidade/Questão36.js";
 document.getElementById("poo36")?.addEventListener("click",questãoPOO36)
