@@ -132,6 +132,9 @@ document.getElementById("poo36")?.addEventListener("click",questãoPOO36)
 import { questãoPOO37 } from "./POO/Lista 2º -Unidade/Questão37.js";
 document.getElementById("poo37")?.addEventListener("click",questãoPOO37)
 
+import { questãoPOO38 } from "./POO/Lista 2º -Unidade/Questão38.js";
+document.getElementById("poo38")?.addEventListener("click",questãoPOO38)
+
 import { questãoPOO39 } from "./POO/Lista 2º -Unidade/Questão39.js";
 document.getElementById("poo39")?.addEventListener("click",questãoPOO39)
 
